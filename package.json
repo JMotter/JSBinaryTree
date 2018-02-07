@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "scripts": {
     "init": "npm install",
-    "test": "mocha ./test/*.js"
+    "test": "mocha ./test/*.js",
+    "karma": ""
   },
   "dependencies": {},
   "devDependencies": {

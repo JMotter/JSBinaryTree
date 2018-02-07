@@ -1,13 +1,23 @@
 const get = require('./getFunction.js');
+const remove = require('./removeFunction.js');
+const post = require('./postFunction.js');
 
 let jsBinaryTree = () => {
-  let post = () => {console.log('posting');};
-  let remove = () => {console.log('deleting');};
+  let node = {
+    data: null,
+    left: null,
+    right: null
+  };
+
+  let self = {
+    node: node,
+    root: Object.assign({}, node)
+  };
 
   return jsBinaryTree = {
-    get: get,
-    post: post,
-    delete: remove
+    get: get.bind(self),
+    post: post.bind(self),
+    delete: remove.bind(self)
   };
 };
 
