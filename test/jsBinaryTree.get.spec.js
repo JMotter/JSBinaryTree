@@ -3,22 +3,32 @@ const main = require('../src/jsBinaryTree.js');
 
 describe('JS Binary Tree - Get Function', () => {
   beforeEach(() => {
-    main.post(10);
+    //Init the tree by deleting all nodes.
+    let tree = main.get();
+    tree.forEach((ele) => {
+      main.delete(ele);
+    });
   });
 
+  it('Get an empty tree', () => {
+      expect(main.get()).to.eql([null]);
+  });
   it('Get the full tree', () => {
-      expect(main.get()).to.equal('10');
+    expect(main.post(10)).to.equal(201);
+    expect(main.post(20)).to.equal(201);
+    expect(main.post(1)).to.equal(201);
+    expect(main.get()).to.eql([1, 10, 20]);
   });
   it('Get value from left', () => {
-      main.get();
+      //main.get();
   });
   it('Get value from right', () => {
-      main.get();
+      //main.get();
   });
   it('Get value from second level left', () => {
-      main.get();
+      //main.get();
   });
   it('Get value from second level right', () => {
-      main.get();
+    //  main.get();
   });
 });

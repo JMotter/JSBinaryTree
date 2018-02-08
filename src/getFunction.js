@@ -1,12 +1,11 @@
 let get = function(value = null, filter = null) {
 
   let getFullTree = (node) => {
-    let tree = '';
-    if (node.left) {tree += getFullTree(node.left);}
-    tree += node.data + ' ';
-    if (node.right) {tree += getFullTree(node.left);}
-console.log('tree' + tree);
-    return tree.trim();
+    let tree = [];
+    if (node.left) {tree = getFullTree(node.left);}
+    tree.push(node.data);
+    if (node.right) {tree = tree.concat(getFullTree(node.right));}
+    return tree;
   };
 
   // Request Handler

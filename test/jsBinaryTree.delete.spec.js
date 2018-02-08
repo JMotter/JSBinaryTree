@@ -7,6 +7,6 @@ describe('JS Binary Tree - Delete Function', () => {
   });
 
   it('Post value of 10', () => {
-      main.delete();
+      //main.delete();
   });
-});js
+});
