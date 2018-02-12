@@ -4,10 +4,10 @@ const main = require('../src/jsBinaryTree.js');
 describe('JS Binary Tree - Get Function', () => {
   beforeEach(() => {
     //Init the tree by deleting all nodes.
-    let tree = main.get();
+    /*let tree = main.get();
     tree.forEach((ele) => {
       main.delete(ele);
-    });
+    });*/
   });
 
   it('Get an empty tree', () => {
@@ -18,6 +18,9 @@ describe('JS Binary Tree - Get Function', () => {
     expect(main.post(20)).to.equal(201);
     expect(main.post(1)).to.equal(201);
     expect(main.get()).to.eql([1, 10, 20]);
+    main.delete(1); //clean up until delete function is completed.
+    main.delete(20); //clean up until delete function is completed.
+    main.delete(10); //clean up until delete function is completed.
   });
   it('Get value from left', () => {
       //main.get();

@@ -6,10 +6,18 @@ let testResponse = [];
 describe('JS Binary Tree - Post Function', () => {
   beforeEach(() => {
     //Init the tree by deleting all nodes.
-    let tree = main.get();
+    /*let tree = main.get();
     tree.forEach((ele) => {
       main.delete(ele);
-    });
+    });*/
+  });
+
+  after(() => {
+    //beforeEach will replace this once delete function is complete.  Until then...
+    main.delete(5);
+    main.delete(20);
+    main.delete(15);
+    main.delete(10);
   });
 
   it('Post a value', () => {

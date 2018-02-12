@@ -1,6 +1,8 @@
 let get = function(value = null, filter = null) {
 
   let getFullTree = (node) => {
+    if (!node) {return [];}
+
     let tree = [];
     if (node.left) {tree = getFullTree(node.left);}
     tree.push(node.data);
