@@ -8,15 +8,16 @@
     *   - jsBinaryTree.get(value, filter)  
     *         Indempotent function call that retrieves based on the filter string of:
     *           a) (value, null)    -> Returns boolean.
-    *           b) (value, 'prior') -> Node value immediately less than param.
-    *           c) (value, 'next')  -> Node value immediately less than param.                *           d) (null, 'min')    -> Returns min value in the tree.
-    *           e) (null, 'max')    -> Returns max value in the tree.
-    *           f) (null, null)     -> Returns the full order tree as an array.
+    *           b) (value, 'prior') -> Node value immediately less than value.
+    *           c) (value, 'next')  -> Node value immediately more than value.      *           d) (null, 'min')    -> Returns min value in the tree, or null.
+    *           e) (null, 'max')    -> Returns max value in the tree, or null.
+    *           f) (null, null)     -> Returns array of the full ordered tree.
     *   - jsBinaryTree.post(value)
     *         Inserts a new node into the tree.
-    *         Return codes: 201 for successful insert, 409 for duplicate.
+    *         Return codes: 201 (successful insert), 409 (duplicate).
     *   - jsBinaryTree.delete(value)
     *         Deletes the node of the param value.
+    *         Return codes: 200 (success), 409 (failure/not found).
 
 ## Installation:
     * Run "git clone <url>" to install this library.
@@ -26,10 +27,8 @@
 ## Pull Requests
     * Please branch and submit pull requests to Github.
     * Open Dev Needs include:
-    *    1) delete Function
-    *    2) get(min) Function
-    *    3) get(max) function
-    *    4) get(value) Function
-    *    5) get(prior) Function
-    *    6) get(next) Function
-    *    7) Karma unit tests.  Lib/config installed but needs babel for ES6.
+    *    1) delete Function for 2 children
+    *    2) get(max) function
+    *    3) get(prior) Function
+    *    4) get(next) Function
+    *    5) Karma unit tests.  Lib/config installed but needs babel for ES6.
